@@ -5,7 +5,9 @@ public class GamblingSimulation {
 	public static int BET = 1;
 	public static final int STAKE_PER_DAY = 100;// STAKE PER DAY
 
-	// Method to check win lose
+	/*
+	 * As a Gambler make $1 bet so either win or loose $1
+	 */
 	public static void winLose() {
 		double ran = Math.floor((Math.random() * 10) % 2);
 		System.out.println("Random Value: " + ran);
@@ -28,9 +30,21 @@ public class GamblingSimulation {
 		System.out.println("Total stake for resign for a day is  " + totalStake);
 	}
 
+	/*
+	 * After 20 days of playing every day would like to know the total amount won or
+	 * lost.
+	 */
+	public static void monthlyWinOrLoss() {
+		int day;
+		for (day = 1; day <= 20; day++) {
+			System.out.printf("day %d\n", day);
+			resignDayCheck();
+		}
+	}
+
 	// Main method
 	public static void main(String[] args) {
 		System.out.println("Welcome to Gambling Simulator");
-		resignDayCheck();
+		monthlyWinOrLoss();
 	}
 }
